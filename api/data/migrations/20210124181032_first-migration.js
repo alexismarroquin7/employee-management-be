@@ -254,7 +254,18 @@ exports.up = async (knex) => {
 }
 
 exports.down = async (knex) => {
+  await knex.schema.dropTableIfExists('employee_contacts')
+  await knex.schema.dropTableIfExists('employee_addresses')
+  await knex.schema.dropTableIfExists('shifts_worked')
+  await knex.schema.dropTableIfExists('shifts')
+  await knex.schema.dropTableIfExists('employee_jobs')
+  await knex.schema.dropTableIfExists('job_addresses')
+  await knex.schema.dropTableIfExists('organization_addresses')
+  await knex.schema.dropTableIfExists('jobs')
+  await knex.schema.dropTableIfExists('departments')
+  await knex.schema.dropTableIfExists('employees')
+  await knex.schema.dropTableIfExists('organizations')
+  await knex.schema.dropTableIfExists('addresses')
+  await knex.schema.dropTableIfExists('users')
   await knex.schema.dropTableIfExists('roles')
-  await knex.schema.dropTableIfExists('users')
-  await knex.schema.dropTableIfExists('users')
 }
