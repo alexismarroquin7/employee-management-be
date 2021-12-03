@@ -14,7 +14,7 @@ const employee_jobs = [
     pay_period: 'wage',
     employee_id: 2,
     job_id: 2,
-    role_id: 3,
+    role_id: 4,
     organization_address_id: 1
   }
 ]

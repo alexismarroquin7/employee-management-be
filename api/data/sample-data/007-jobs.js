@@ -6,7 +6,7 @@ const jobs = [
     job_pay_period: 'none',
     job_rate_min: 0,
     job_rate_max: 0,
-    deparment_id: 1
+    department_id: 1
   },
   {
     job_title: 'Sales Associate',
@@ -15,7 +15,7 @@ const jobs = [
     job_pay_period: 'wage',
     job_rate_min: 14.50,
     job_rate_max: 16.00,
-    deparment_id: 3
+    department_id: 3
   },
 ]
 

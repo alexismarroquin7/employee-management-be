@@ -6,7 +6,15 @@ const roles = [
   {
     role_name: 'organization_admin',
     role_description: 'can update their organization, enroll more organization_admins, etc.'
-  }
+  },
+  {
+    role_name: 'organization_manager',
+    role_description: 'can update their organization, enroll more organization_admins, etc.'
+  },
+  {
+    role_name: 'organization_employee',
+    role_description: 'can update their organization, enroll more organization_admins, etc.'
+  },
 ]
 
 module.exports = roles;

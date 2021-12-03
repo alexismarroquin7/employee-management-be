@@ -7,7 +7,7 @@ exports.up = async (knex) => {
       .unique()
       .notNullable();
       
-      roles.string('role_description');
+      roles.string('role_description', 1000);
 
       roles.timestamp('created_at').defaultTo(knex.fn.now());
       roles.timestamp('modified_at').defaultTo(knex.fn.now());
@@ -48,7 +48,7 @@ exports.up = async (knex) => {
     .createTable('organizations', organizations => {
       organizations.increments('organization_id')
       organizations.string('organization_name');
-      organizations.string('organization_description');
+      organizations.string('organization_description', 1000);
 
       organizations.timestamp('created_at').defaultTo(knex.fn.now());
       organizations.timestamp('modified_at').defaultTo(knex.fn.now());
@@ -76,7 +76,7 @@ exports.up = async (knex) => {
     .createTable('departments', departments => {
       departments.increments('department_id')
       departments.string('department_name');
-      departments.string('department_description');
+      departments.string('department_description', 1000);
       departments.integer('organization_id')
       .unsigned()
       .notNullable()
@@ -92,12 +92,12 @@ exports.up = async (knex) => {
     .createTable('jobs', jobs => {
       jobs.increments('job_id');
       jobs.string('job_title');
-      jobs.string('job_description');
-      jobs.string('job_requirements');
-      jobs.integer('job_pay_period');
-      jobs.integer('job_rate_min');
-      jobs.integer('job_rate_max');
-      jobs.integer('deparment_id')
+      jobs.string('job_description', 1000);
+      jobs.string('job_requirements', 1000);
+      jobs.string('job_pay_period');
+      jobs.decimal('job_rate_min');
+      jobs.decimal('job_rate_max');
+      jobs.integer('department_id')
       .unsigned()
       .notNullable()
       .references('department_id')
@@ -154,7 +154,7 @@ exports.up = async (knex) => {
     .createTable('employee_jobs', employee_jobs => {
       employee_jobs.increments('employee_job_id');
       employee_jobs.integer('employee_job_active');
-      employee_jobs.integer('pay_rate');
+      employee_jobs.decimal('pay_rate');
       employee_jobs.string('pay_period');
 
       employee_jobs.integer('employee_id')
@@ -199,7 +199,7 @@ exports.up = async (knex) => {
       shifts.string('shift_start_date');
       shifts.string('shift_end_date');
       shifts.integer('shift_duration');
-      shifts.integer('pay_rate');
+      shifts.decimal('pay_rate');
       shifts.string('pay_type');
       shifts.integer('shift_confirmed_by_employee');
       
