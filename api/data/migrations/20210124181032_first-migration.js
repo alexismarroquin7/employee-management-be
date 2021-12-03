@@ -20,6 +20,14 @@ exports.up = async (knex) => {
       .notNullable()
       users.string('password')
       .notNullable()
+
+      users.integer('role_id')
+      .unsigned()
+      .notNullable()
+      .references('role_id')
+      .inTable('roles')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT')
       
       users.timestamp('created_at').defaultTo(knex.fn.now());
       users.timestamp('modified_at').defaultTo(knex.fn.now());
