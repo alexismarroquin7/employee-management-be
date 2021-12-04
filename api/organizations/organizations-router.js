@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Organization = require('./organizations-model');
-const { validateNewOrganizationRequiredFields } = require('./organizations-middleware');
+const { validateNewOrganizationRequiredFields, validateOrganizationExistsById } = require('./organizations-middleware');
 
 router.get('/', async (req, res, next) => {
   try {
@@ -9,6 +9,10 @@ router.get('/', async (req, res, next) => {
   } catch(err) {
     next(err);
   }
+});
+
+router.get('/:organization_id', validateOrganizationExistsById, async (req, res, next) => {
+  res.status(200).json(req.organization);
 });
 
 router.post('/', validateNewOrganizationRequiredFields, async (req, res, next) => {

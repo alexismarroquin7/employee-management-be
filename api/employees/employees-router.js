@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const Employee = require('./employees-model');
+const { handleQuery } = require('./employee-middleware');
 
-router.get('/', async (req, res, next) => {
+router.get('/', handleQuery, async (req, res, next) => {
+  
   try {
     const employees = await Employee.findAll();
     res.status(200).json(employees);
