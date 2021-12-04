@@ -6,7 +6,9 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'male',
     date_of_birth: '1949-12-01',
-    user_id: 1
+    user_id: 1,
+    role_id: 2,
+    organization_id: 1,
   },
   { // 2
     first_name: 'Javier',
@@ -15,7 +17,9 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'male',
     date_of_birth: '1948-11-11',
-    user_id: 2
+    user_id: 2,
+    role_id: 1,
+    organization_id: 1,
   },
   { // 3
     first_name: 'Tata',
@@ -24,7 +28,9 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'female',
     date_of_birth: '1964-04-22',
-    user_id: 3
+    user_id: 3,
+    role_id: 4,
+    organization_id: 1,
   },
   { // 4
     first_name: 'Steve',
@@ -33,7 +39,9 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'male',
     date_of_birth: '1970-03-31',
-    user_id: 4
+    user_id: 4,
+    role_id: 3,
+    organization_id: 1,
   },
   { // 5
     first_name: 'Maria',
@@ -42,7 +50,9 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'female',
     date_of_birth: '1968-05-21',
-    user_id: 4
+    user_id: 4,
+    role_id: 2,
+    organization_id: 1,
   },
   { // 6
     first_name: 'Elmer',
@@ -51,8 +61,10 @@ const employees = [
     phone_number_type: 'mobile',
     gender: 'male',
     date_of_birth: '1970-05-09',
-    user_id: 4
-  },
+    user_id: 4,
+    role_id: 1,
+    organization_id: 1,
+  }
 ]
 
 module.exports = employees;

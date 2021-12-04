@@ -69,6 +69,22 @@ exports.up = async (knex) => {
       .onUpdate('CASCADE')
       .onDelete('RESTRICT')
       ;
+      
+      employees.integer('role_id')
+      .notNullable()
+      .references('role_id')
+      .inTable('roles')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT')
+      ;
+      
+      employees.integer('organization_id')
+      .notNullable()
+      .references('organization_id')
+      .inTable('organizations')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT')
+      ;
 
       employees.timestamp('created_at').defaultTo(knex.fn.now());
       employees.timestamp('modified_at').defaultTo(knex.fn.now());
