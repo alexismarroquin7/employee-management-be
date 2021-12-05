@@ -19,6 +19,20 @@ const handleQuery = async (req, res, next) => {
       } catch (err) {
         next(err);
       }
+    } else if(req.query.organization_id){
+      try {
+        const employees = await Employee.findBy({ 'org.organization_id': Number(req.query.organization_id) });
+        if(employees && Array.isArray(employees) && employees.length > 0){
+          res.status(200).json(employees);
+        } else {
+          next({
+            status: 404,
+            message: `organization_id ${req.query.organization_id} does not exist`
+          });
+        }
+      } catch (err) {
+        next(err);
+      }
     } else {
       next();
     }

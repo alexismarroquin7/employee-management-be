@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const { handleEmailQuery } = require('./users-middleware');
 const User = require('./users-model');
 
-router.get('/', async (req, res, next) => {
+router.get('/', handleEmailQuery, async (req, res, next) => {
   try {
     const users = await User.findAll();
     res.status(200).json(users);
