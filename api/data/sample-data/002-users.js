@@ -55,140 +55,140 @@ const users = [
     email: 'amadoCarillo@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 8
     email: 'valeriaVelez@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 9
     email: 'elisaAlvarez@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 10
     email: 'gustavoGaviria@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 11
     email: 'marinaOchoa@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 12
     email: 'horacioCarrillo@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 13
     email: 'cristinaJurado@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 14
     email: 'jorgeSalcedo@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 15
     email: 'paolaSalcedo@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 16
-    email: 'paolaSalcedo@gmail.com',
+    email: 'davidRodriguez@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 17
-    email: 'paolaSalcedo@gmail.com',
+    email: 'billStechner@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 18
-    email: 'paolaSalcedo@gmail.com',
+    email: 'dianaTurbay@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 19
     email: 'chuchoPena@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 20
     email: 'cesarGaviria@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 21
     email: 'fabioOchoa@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 22
     email: 'rachelGreen@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 23
     email: 'chandlerBing@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 24
     email: 'monicaGeller@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 25
     email: 'joeyTribbiani@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
   {
     // 26
     email: 'rossGeller@gmail.com',
     email_confirmed: 1,
     password: hash,
-    role_id: 1
+    role_id: 2
   },
 ]
 
