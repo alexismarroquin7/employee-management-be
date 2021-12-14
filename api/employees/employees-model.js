@@ -136,7 +136,29 @@ const findBy = async (filter) => {
   return employees;
 }
 
+const create = async (employee) => {
+  const [ emp ] = await db('employees as emp')
+  .insert({
+    first_name: employee.first_name || null,
+    last_name: employee.last_name || null,
+    phone_number: employee.phone_number || null,
+    phone_number_type: employee.phone_number_type || null,
+    gender: employee.gender || null,
+    date_of_birth: employee.date_of_birth || null,
+    
+    user_id: employee.user_id,
+    role_id: employee.role_id,
+    organization_id: employee.organization_id
+  
+  }, ['emp.employee_id']);
+
+  const [ newEmp ] = await findBy({ employee_id: emp.employee_id })
+  
+  return newEmp;
+};
+
 module.exports = {
   findAll,
-  findBy
+  findBy,
+  create
 }
