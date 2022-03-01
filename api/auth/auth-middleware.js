@@ -1,5 +1,7 @@
 const User = require('../users/users-model')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
 const { generateJsonWebTokenForUser } = require('../utils');
 
 const validateLoginRequiredFields = async (req, res, next) => {

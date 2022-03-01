@@ -157,8 +157,34 @@ const create = async (employee) => {
   return newEmp;
 };
 
+const updateById = async (employee_id, changes) => {
+  const [ oldEmp ] = await findBy({ employee_id })
+  
+  const [ emp ] = await db('employees as emp')
+  .where({ employee_id })
+  .update({
+    first_name: changes.first_name || oldEmp.first_name,
+    last_name: changes.last_name || oldEmp.last_name,
+    phone_number: changes.phone_number || oldEmp.phone_number,
+    phone_number_type: changes.phone_number_type || oldEmp.phone_number_type,
+    gender: changes.gender || oldEmp.gender,
+    date_of_birth: changes.date_of_birth || oldEmp.date_of_birth,
+    
+    user_id: changes.user_id || oldEmp.user_id,
+    role_id: changes.role_id || oldEmp.role_id,
+    organization_id: changes.organization_id || oldEmp.organization_id,
+    modified_at: db.fn.now(),
+    created_at: oldEmp.created_at
+
+  }, ['emp.employee_id']);
+
+  const [ newEmp ] = await findBy({ employee_id: emp.employee_id })
+  
+  return newEmp;
+}
 module.exports = {
   findAll,
   findBy,
-  create
+  create,
+  updateById
 }

@@ -9,6 +9,7 @@ const findAll = async () => {
   .join('departments as d', 'd.department_id', 'j.department_id')
   .join('organizations as org', 'org.organization_id', 'org_add.organization_id')
   .join('addresses as add', 'add.address_id', 'org_add.address_id')
+  .join('users as u', 'u.user_id', 'emp.user_id')
   .select(
     'emp_job.employee_job_id',
     'emp_job.employee_job_active',
@@ -59,7 +60,14 @@ const findAll = async () => {
     'org.organization_name',
     'org.organization_description',
     'org.created_at as organization_created_at',
-    'org.modified_at as organization_modified_at'
+    'org.modified_at as organization_modified_at',
+    
+    'emp_job.employee_id',
+    'emp.first_name',
+    'emp.last_name',
+    'u.email',
+    'emp.created_at as employee_created_at',
+    'emp.modified_at as employee_modified_at'
   )
 
   const employeeJobs = rows.map(row => {
@@ -120,6 +128,14 @@ const findAll = async () => {
           created_at: row.address_created_at,
           modified_at: row.address_modified_at
         }
+      },
+      employee: {
+        employee_id: row.employee_id,
+        first_name: row.first_name,
+        last_name: row.last_name,
+        email: row.email,
+        created_at: row.employee_created_at,
+        modified_at: row.employee_modified_at
       }
     }
   })
@@ -135,6 +151,7 @@ const findById = async employee_job_id => {
   .join('departments as d', 'd.department_id', 'j.department_id')
   .join('organizations as org', 'org.organization_id', 'org_add.organization_id')
   .join('addresses as add', 'add.address_id', 'org_add.address_id')
+  .join('users as u', 'u.user_id', 'emp.user_id')
   .select(
     'emp_job.employee_job_id',
     'emp_job.employee_job_active',
@@ -185,12 +202,18 @@ const findById = async employee_job_id => {
     'org.organization_name',
     'org.organization_description',
     'org.created_at as organization_created_at',
-    'org.modified_at as organization_modified_at'
+    'org.modified_at as organization_modified_at',
+    
+    'emp_job.employee_id',
+    'emp.first_name',
+    'emp.last_name',
+    'u.email',
+    'emp.created_at as employee_created_at',
+    'emp.modified_at as employee_modified_at'
   )
   .where({ employee_job_id })
   .first();
 
-  
   return {
     employee_job_id: row.employee_job_id,
     employee_job_active: row.employee_job_active,
@@ -248,6 +271,14 @@ const findById = async employee_job_id => {
         created_at: row.address_created_at,
         modified_at: row.address_modified_at
       }
+    },
+    employee: {
+      employee_id: row.employee_id,
+      first_name: row.first_name,
+      last_name: row.last_name,
+      email: row.email,
+      created_at: row.employee_created_at,
+      modified_at: row.employee_modified_at
     }
   }
 }
@@ -261,6 +292,7 @@ const findBy = async filter => {
   .join('departments as d', 'd.department_id', 'j.department_id')
   .join('organizations as org', 'org.organization_id', 'org_add.organization_id')
   .join('addresses as add', 'add.address_id', 'org_add.address_id')
+  .join('users as u', 'u.user_id', 'emp.user_id')
   .select(
     'emp_job.employee_job_id',
     'emp_job.employee_job_active',
@@ -311,7 +343,14 @@ const findBy = async filter => {
     'org.organization_name',
     'org.organization_description',
     'org.created_at as organization_created_at',
-    'org.modified_at as organization_modified_at'
+    'org.modified_at as organization_modified_at',
+
+    'emp_job.employee_id',
+    'emp.first_name',
+    'emp.last_name',
+    'u.email',
+    'emp.created_at as employee_created_at',
+    'emp.modified_at as employee_modified_at'
   )
   .where(filter)
 
@@ -373,6 +412,14 @@ const findBy = async filter => {
           created_at: row.address_created_at,
           modified_at: row.address_modified_at
         }
+      },
+      employee: {
+        employee_id: row.employee_id,
+        first_name: row.first_name,
+        last_name: row.last_name,
+        email: row.email,
+        created_at: row.employee_created_at,
+        modified_at: row.employee_modified_at
       }
     }
   })
